@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ContactForm from './components/ContactForm/ContactForm';
-import ContactList from './components/ContactList/ContactList';
+// import ContactList from './components/ContactList/ContactList';
 import { nanoid } from 'nanoid';
 import Filter from 'components/Filter/Filter';
+import { Contact } from './components/Contact/Contact';
 
 const contactData = [
   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -25,9 +26,9 @@ export default function App() {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
-  const handleDeleteContact = contactId => {
-    setContacts(contacts.filter(contact => contact.id !== contactId));
-  };
+  // const handleDeleteContact = contactId => {
+  //   setContacts(contacts.filter(contact => contact.id !== contactId));
+  // };
 
   const handleAddContact = ({ name, number }) => {
     const hasDuplicate = contacts.find(contact => contact.name === name);
@@ -45,9 +46,9 @@ export default function App() {
     setContacts([...contacts, finalContact]);
   };
 
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
+  // const filteredContacts = contacts.filter(contact =>
+  //   contact.name.toLowerCase().includes(filter.toLowerCase())
+  // );
 
   return (
     <div>
@@ -57,7 +58,7 @@ export default function App() {
       <section>
         <Filter value={filter} onChange={e => setFilter(e.target.value)} />
       </section>
-      {filteredContacts.map(contact => (
+      {/* {filteredContacts.map(contact => (
         <ContactList
           key={contact.id}
           id={contact.id}
@@ -65,7 +66,8 @@ export default function App() {
           number={contact.number}
           handleDeleteContact={handleDeleteContact}
         />
-      ))}
+      ))} */}
+      <Contact />
     </div>
   );
 }
