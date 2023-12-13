@@ -9,20 +9,13 @@ export const Contact = () => {
 
   return (
     <div>
-      {/* <section>
-    <ContactForm handleAddContact={handleAddContact} />
-  </section>
-  <section>
-    <Filter value={filter} onChange={e => setFilter(e.target.value)} />
-  </section> */}
-      {filteredContacts.map(contact => (
+         {filteredContacts.map(contact => (
         <ContactList
           key={contact.id}
           id={contact.id}
           name={contact.name}
           number={contact.number}
-          // handleDeleteContact={handleDeleteContact}
-        />
+         />
       ))}
     </div>
   );

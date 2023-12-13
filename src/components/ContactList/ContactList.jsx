@@ -2,7 +2,7 @@ import { deleteContact } from '../../redux/slice';
 import css from './ContactList.module.css';
 import { useDispatch } from 'react-redux';
 
-const ContactList = ({ id, name, number, handleDeleteContact }) => {
+const ContactList = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
   return (
