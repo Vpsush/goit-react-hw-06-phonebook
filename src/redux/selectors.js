@@ -1,6 +1,6 @@
 export const selectorContacts = state => {
   return state.contacts;
 };
-export const contactFilter = state => {
+export const selectorFilter = state => {
   return state.filter;
 };
