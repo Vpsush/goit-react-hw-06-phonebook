@@ -2,11 +2,12 @@
 // import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import { useSelector } from 'react-redux';
-import { selectorContacts } from 'redux/selectors';
+import selectorContacts from 'redux/selectors';
 // import Filter from 'components/Filter/Filter';
 
 export const Contact = () => {
   const filteredContacts = useSelector(selectorContacts);
+
   return (
     <div>
       {/* <section>
