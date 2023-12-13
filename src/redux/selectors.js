@@ -1,3 +1,3 @@
 export const selectorContacts = state => {
-  return state;
+  return state.contacts;
 };
