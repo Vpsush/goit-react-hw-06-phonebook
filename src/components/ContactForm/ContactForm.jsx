@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import css from './ContactForm.module.css';
 
 import { addContacts } from '../../redux/contactSlice';
@@ -28,6 +28,10 @@ export default function ContactForm() {
 
   const dispatch = useDispatch();
   const contacts = useSelector(selectorFilter);
+
+  useEffect(() => {
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
 
   const handleSubmit = e => {
     e.preventDefault();
