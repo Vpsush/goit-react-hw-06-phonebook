@@ -2,20 +2,20 @@
 // import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import { useSelector } from 'react-redux';
-import { selectorContacts } from '../../redux/selectors';
+import { selectorFilter } from '../../redux/selectors';
 
 export const Contact = () => {
-  const filteredContacts = useSelector(selectorContacts);
+  const filteredContacts = useSelector(selectorFilter);
 
   return (
     <div>
-         {filteredContacts.map(contact => (
+      {filteredContacts.map(contact => (
         <ContactList
           key={contact.id}
           id={contact.id}
           name={contact.name}
           number={contact.number}
-         />
+        />
       ))}
     </div>
   );

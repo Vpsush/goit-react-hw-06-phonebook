@@ -15,8 +15,9 @@ const Filter = () => {
         <input
           type="text"
           name="filter"
+          required
           value={filter}
-          onChange={e => dispatch(filterContact(e.currentTarget.value))}
+          onChange={e => dispatch(filterContact(e.target.value))}
         />
       </label>
     </form>

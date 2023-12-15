@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ContactForm from './components/ContactForm/ContactForm';
-// import ContactList from './components/ContactList/ContactList';
+// import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
 import Filter from 'components/Filter/Filter';
 import { Contact } from './components/Contact/Contact';
@@ -15,16 +15,17 @@ const contactData = [
 export default function App() {
   const [filter, setFilter] = useState('');
   const [contacts, setContacts] = useState(contactData);
+  // const dispatch = useSelector(selectorContacts);
 
-  useEffect(() => {
-    const stringifiedContacts = localStorage.getItem('contacts');
-    const parsedContacts = JSON.parse(stringifiedContacts) ?? contactData;
-    setContacts(parsedContacts);
-  }, []);
+  // useEffect(() => {
+  //   const stringifiedContacts = localStorage.getItem('contacts');
+  //   const parsedContacts = JSON.parse(stringifiedContacts) ?? contactData;
+  //   setContacts(parsedContacts);
+  // }, []);
 
-  useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
+  // useEffect(() => {
+  //   localStorage.setItem('contacts', JSON.stringify(contacts));
+  // }, [contacts]);
 
   // const handleDeleteContact = contactId => {
   //   setContacts(contacts.filter(contact => contact.id !== contactId));
