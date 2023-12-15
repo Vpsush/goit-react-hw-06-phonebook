@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ContactForm from './components/ContactForm/ContactForm';
 // import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
 import Filter from 'components/Filter/Filter';
 import { Contact } from './components/Contact/Contact';
 
-const contactData = [
-  { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-  { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-  { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-  { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-];
+// const contactData = [
+//   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+//   { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+//   { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+//   { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+// ];
 
 export default function App() {
   const [filter, setFilter] = useState('');
-  const [contacts, setContacts] = useState(contactData);
+  // const [contacts, setContacts] = useState(contactData);
   // const dispatch = useSelector(selectorContacts);
 
   // useEffect(() => {
@@ -31,21 +31,21 @@ export default function App() {
   //   setContacts(contacts.filter(contact => contact.id !== contactId));
   // };
 
-  const handleAddContact = ({ name, number }) => {
-    const hasDuplicate = contacts.find(contact => contact.name === name);
-    if (hasDuplicate) {
-      alert(`${name} is already in contacts`);
-      return;
-    }
+  // const handleAddContact = ({ name, number }) => {
+  //   const hasDuplicate = contacts.find(contact => contact.name === name);
+  //   if (hasDuplicate) {
+  //     alert(`${name} is already in contacts`);
+  //     return;
+  //   }
 
-    const finalContact = {
-      id: nanoid(),
-      name,
-      number,
-    };
+  //   const finalContact = {
+  //     id: nanoid(),
+  //     name,
+  //     number,
+  //   };
 
-    setContacts([...contacts, finalContact]);
-  };
+  //   setContacts([...contacts, finalContact]);
+  // };
 
   // const filteredContacts = contacts.filter(contact =>
   //   contact.name.toLowerCase().includes(filter.toLowerCase())
@@ -54,7 +54,7 @@ export default function App() {
   return (
     <div>
       <section>
-        <ContactForm handleAddContact={handleAddContact} />
+        <ContactForm />
       </section>
       <section>
         <Filter value={filter} onChange={e => setFilter(e.target.value)} />
