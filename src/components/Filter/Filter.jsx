@@ -1,12 +1,12 @@
 import React from 'react';
 import css from './Filter.module.css';
 import { filterContact } from '../../redux/filterSlice';
-import { selectorFilter } from '../../redux/selectors';
+import { selectFilter } from '../../redux/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Filter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(selectorFilter);
+  const filter = useSelector(selectFilter);
 
   return (
     <form className={css.form}>
